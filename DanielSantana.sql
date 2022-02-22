@@ -4,7 +4,7 @@ USE bdImobiliaria;
 
 /*CRIAÇÃO DAS TABELAS DO BANCO*/
 CREATE TABLE IF NOT EXISTS Vendedor(
-cd_Vendedor INT,
+cd_Vendedor INT NOT NULL,
 nm_Endereco VARCHAR(40),
 cd_CPF DECIMAL(11),
 nm_Cidade VARCHAR(20),
@@ -15,7 +15,7 @@ ds_Email VARCHAR(80)
 );
 
 CREATE TABLE IF NOT EXISTS Comprador(
-cd_Comprador INT,
+cd_Comprador INT NOT NULL,
 nm_Comprador VARCHAR(40),
 ds_Endereco VARCHAR(40),
 cd_CPF DECIMAL(11),
@@ -27,7 +27,7 @@ ds_Email VARCHAR(80)
 );
 
 CREATE TABLE IF NOT EXISTS Imovel(
-cd_imovel INT,
+cd_imovel INT NOT NULL,
 cd_Vendedor INT,
 cd_Bairro INT,
 cd_Cidade INT,
@@ -51,25 +51,25 @@ dt_Oferta DATE
 );
 
 CREATE TABLE IF NOT EXISTS Estado(
-sg_Estado CHAR(2),
+sg_Estado CHAR(2) NOT NULL,
 nm_Estado VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS Cidade(
-cd_Cidade INT,
+cd_Cidade INT NOT NULL,
 sg_Estado CHAR(2),
 nm_Cidade VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS Bairro(
-cd_Bairro INT,
+cd_Bairro INT NOT NULL,
 cd_Cidade INT,
 sg_Estado CHAR(2),
 nm_Bairro VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS Faixa_Imovel(
-cd_Faixa INT,
+cd_Faixa INT NOT NULL,
 nm_Faixa VARCHAR(30),
 vl_Maximo DECIMAL(15,2),
 vl_Minimo DECIMAL(15,2)
@@ -101,5 +101,3 @@ ALTER TABLE Imovel
 ADD CONSTRAINT cd_Vendedor
 FOREIGN KEY cd_Vendedor
 REFERENCES Vendedor(cd_Vendedor);
-
-
