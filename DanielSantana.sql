@@ -91,13 +91,43 @@ ADD PRIMARY KEY(sg_Estado);
 ALTER TABLE Cidade
 ADD PRIMARY KEY(cd_Cidade);
 
+ALTER TABLE Cidade
+ADD PRIMARY KEY(sg_Estado);
+
 ALTER TABLE Bairro
 ADD PRIMARY KEY(cd_Bairro);
 
+ALTER TABLE Bairro
+ADD PRIMARY KEY(cd_Cidade);
+
+ALTER TABLE Bairro
+ADD PRIMARY KEY(sg_Estado);
+
 ALTER TABLE Faixa_Imovel
-ADD PRIMARY KEY(cnm_Faixa);
+ADD PRIMARY KEY(cd_Faixa);
 
 ALTER TABLE Imovel
-ADD CONSTRAINT cd_Vendedor
-FOREIGN KEY cd_Vendedor
+ADD CONSTRAINT fk_cd_Vendedor
+FOREIGN KEY (cd_Vendedor)
 REFERENCES Vendedor(cd_Vendedor);
+
+ALTER TABLE Imovel
+ADD CONSTRAINT fk_cd_Bairro
+FOREIGN KEY (cd_Bairro)
+REFERENCES Bairro(cd_Bairro);
+
+ALTER TABLE Imovel
+ADD CONSTRAINT fk_cd_Cidade
+FOREIGN KEY (cd_Cidade)
+REFERENCES Cidade(cd_Cidade);
+
+ALTER TABLE Imovel
+ADD CONSTRAINT fk_sg_Estado
+FOREIGN KEY (sg_Estado)
+REFERENCES Cidade(sg_Estado);
+
+ALTER TABLE Imovel
+ADD CONSTRAINT fk_cd_
+FOREIGN KEY (cd_Estado)
+REFERENCES Cidade(cd_Estado);
+
