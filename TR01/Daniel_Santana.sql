@@ -1,3 +1,5 @@
+/*TR01*/
+
 CREATE DATABASE IF NOT EXISTS bdImobiliaria;
 
 USE bdImobiliaria;
@@ -5,7 +7,8 @@ USE bdImobiliaria;
 /*CRIAÇÃO DAS TABELAS DO BANCO*/
 CREATE TABLE IF NOT EXISTS Vendedor(
 cd_Vendedor INT NOT NULL,
-nm_Endereco VARCHAR(40),
+nm_Vendedor VARCHAR(40),
+ds_Endereco VARCHAR(40),
 cd_CPF DECIMAL(11),
 nm_Cidade VARCHAR(20),
 nm_Bairro VARCHAR(20),
@@ -136,4 +139,3 @@ REFERENCES Comprador(cd_Comprador);
 ALTER TABLE Oferta
 ADD FOREIGN KEY (cd_Imovel)
 REFERENCES Imovel(cd_Imovel);
-
