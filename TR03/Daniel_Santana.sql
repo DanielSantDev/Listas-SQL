@@ -1,5 +1,3 @@
-USE bdimobiliaria;
-
 /*1*/
 SELECT cd_Comprador, nm_Comprador, ds_Email 
 FROM Comprador;
@@ -84,9 +82,6 @@ SELECT MAX(vl_Preco) as MaiorPreco, MIN(vl_Preco) as MenorPreco, AVG(vl_Preco) a
 FROM Imovel;
 
 /*17*/
-SELECT SUM(qt_Ofertas) as TotalOfertas, dt_Oferta
-FROM Imovel, Oferta
-WHERE dt_Oferta BETWEEN "2008-01-01" AND "2010-12-31"
-GROUP BY dt_Oferta;
-
-SELECT * FROM Imovel;
+SELECT COUNT(dt_Oferta) as TotalDeOfertas
+FROM Oferta
+WHERE YEAR(dt_Oferta) IN(2008,2009,2010);
