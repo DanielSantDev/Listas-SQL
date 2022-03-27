@@ -1,5 +1,5 @@
 USE bdimobiliaria;
-SELECT * FROM Comprador;
+SELECT * FROM Imovel;
 
 /*1*/
 SELECT cd_Comprador, nm_Comprador, ds_Email 
@@ -18,12 +18,12 @@ WHERE cd_Vendedor = 2;
 /*4*/
 SELECT cd_Imovel, cd_Vendedor, vl_Preco, sg_Estado
 FROM Imovel
-WHERE vl_Preco < 150000.00 AND sg_Estado = 'RJ';
+WHERE (vl_Preco < 150000.00 AND sg_Estado = 'RJ');
 
 /*5*/
 SELECT cd_Imovel, cd_Vendedor, vl_Preco, sg_Estado
 FROM Imovel
-WHERE vl_Preco < 150000.00 AND cd_Vendedor != 2;
+WHERE (vl_Preco < 150000.00 AND cd_Vendedor != 2);
 
 /*6*/
 SELECT cd_Comprador, nm_Comprador, ds_Endereco, sg_Estado
@@ -33,12 +33,12 @@ WHERE sg_Estado IS NULL;
 /*7*/
 SELECT cd_Comprador, cd_Imovel, vl_Oferta, dt_Oferta
 FROM Oferta
-WHERE vl_Oferta > 100000.00 AND vl_Oferta < 150000.00;
+WHERE (vl_Oferta > 100000.00 AND vl_Oferta < 150000.00);
 
 /*8*/
 SELECT dt_Oferta AS DataOferta
 FROM Oferta
-WHERE dt_Oferta BETWEEN "2009-01-01" AND "2009-03-01";
+WHERE (dt_Oferta BETWEEN "2009-01-01" AND "2009-03-01");
 
 /*9*/
 SELECT nm_Vendedor
@@ -51,12 +51,25 @@ FROM Vendedor
 WHERE nm_Vendedor LIKE '_A%';
 
 /*11*/
+SELECT nm_Vendedor
+FROM Vendedor
+WHERE ds_Endereco LIKE '%U%';
 
 /*12*/
+SELECT cd_imovel, ds_Endereco
+FROM Imovel
+WHERE (cd_imovel = 2 OR cd_imovel = 3)
+ORDER BY ds_Endereco ASC;
 
 /*13*/
+SELECT vl_Oferta, dt_Oferta, cd_Imovel
+FROM oferta
+WHERE (cd_imovel = 2 OR cd_imovel = 3)
+AND (vl_Oferta > 140000)
+ORDER BY dt_Oferta DESC;
 
 /*14*/
+
 
 /*15*/
 
