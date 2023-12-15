@@ -6,12 +6,12 @@ Bem-vindo ao repositório de exercícios e desafios em SQL! Este repositório co
 
 - **Exercícios por Tópico:**
   - [Lista 01](TR01)
-  - [Lista 02](Listas-SQL/TR02)
-  - [Lista 03](Listas-SQL/TR03)
-  - [Lista 04](Listas-SQL/TR04)
-  - [Lista 05](Listas-SQL/TR05)
-  - [Lista 06](Listas-SQL/TR06)
-  - [Lista 07](Listas-SQL/TR07)
+  - [Lista 02](TR02)
+  - [Lista 03](TR03)
+  - [Lista 04](TR04)
+  - [Lista 05](TR05)
+  - [Lista 06](TR06)
+  - [Lista 07](TR07)
 
 - **Desafios Práticos:**
   - [Desafio 1](DESAFIO_01)
